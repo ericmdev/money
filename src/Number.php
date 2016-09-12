@@ -29,7 +29,7 @@ final class Number
                 'Number expects a string for calculations'
             );
         }
-        $this->number = (string) $number;
+        $this->number = rtrim($number, '.0');
         $this->decimalSeparatorPosition = strpos($number, '.');
     }
 
