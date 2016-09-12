@@ -29,7 +29,7 @@ final class Number
                 'Number expects a string for calculations'
             );
         }
-        $this->number = rtrim($number, '.0');
+        $this->number = $number;
         $this->decimalSeparatorPosition = strpos($number, '.');
     }
 
@@ -38,7 +38,7 @@ final class Number
      */
     public function isDecimal()
     {
-        return $this->decimalSeparatorPosition !== false;
+        return $this->getFractionalPart() !== '';
     }
 
     /**
